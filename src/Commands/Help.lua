@@ -108,7 +108,7 @@ function Command:Execute(args: table): boolean
 		
 		print('')
 		print('You can learn more about Deliver commands in the docs:')
-		print('https://deliver.mullets.xyz')
+		print('https://mullets-gavin.github.io/Deliver/')
 		
 		return true
 	end

@@ -13,7 +13,7 @@ local About = {
 	'Handle GitHub packages and process studio commands',
 	'',
 	'Check out the documentation for help:',
-	'https://mullets.xyz',
+	'https://mullets-gavin.github.io/Deliver/',
 	'',
 	'For information about commands, run:',
 	'--help',
