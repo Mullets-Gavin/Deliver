@@ -1,7 +1,7 @@
 local plugin = script:FindFirstAncestorWhichIsA("Plugin")
 local require = require(plugin:FindFirstChild('Lighter',true))
 
-local PluginStore = require('PluginStore')
+local Outlet = require('Outlet')
 
 local Command = {}
 Command.Alias = {'d','cli'}
@@ -17,11 +17,11 @@ function Command:Execute(args: table): boolean
 	print('Setting Enabled State:')
 	
 	if enabled == 'enable' then
-		PluginStore:Set('Enabled',true)
+		Outlet:Set('Enabled',true)
 		
 		print('Enabled the command line interface')
 	elseif enabled == 'disable' then
-		PluginStore:Set('Enabled',false)
+		Outlet:Set('Enabled',false)
 		
 		print('Disabled the command line interface')
 	else

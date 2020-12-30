@@ -1,7 +1,7 @@
 local plugin = script:FindFirstAncestorWhichIsA("Plugin")
 local require = require(plugin:FindFirstChild('Lighter',true))
 
-local PluginStore = require('PluginStore')
+local Outlet = require('Outlet')
 
 local Command = {}
 Command.Alias = {'p'}
@@ -49,7 +49,7 @@ function Command:Execute(args: table): boolean
 	end
 	
 	if ParsePath(path) then
-		PluginStore:Set('Path',path)
+		Outlet:Set('Path',path)
 		
 		print("Successfuly set path to '"..path.."'")
 		

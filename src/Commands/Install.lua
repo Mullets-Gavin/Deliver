@@ -1,7 +1,7 @@
 local plugin = script:FindFirstAncestorWhichIsA("Plugin")
 local require = require(plugin:FindFirstChild('Lighter',true))
 
-local PluginStore = require('PluginStore')
+local Outlet = require('Outlet')
 local Libraries = require('Libraries')
 local GitHub = require('GitHub')
 
@@ -37,7 +37,7 @@ end
 
 function Command:Execute(args: table): boolean
 	local link = args[1]
-	local path = args[2] or PluginStore:Get('Path')
+	local path = args[2] or Outlet:Get('Path')
 	local max = 0
 	
 	print('Installing...')
@@ -72,6 +72,8 @@ function Command:Execute(args: table): boolean
 				end
 			end
 		end
+		
+		return false,"Invalid link '"..link.."'"
 	else
 		software = GitHub:Install(link,path)
 		if not software then

@@ -1,7 +1,7 @@
 local plugin = script:FindFirstAncestorWhichIsA("Plugin")
 local require = require(plugin:FindFirstChild('Lighter',true))
 
-local PluginStore = require('PluginStore')
+local Outlet = require('Outlet')
 
 local Command = {}
 Command.Alias = {}
@@ -11,8 +11,8 @@ Command.Info = {
 }
 
 function Command:Execute(args: table): boolean
-	PluginStore:Clear()
-	PluginStore:Get()
+	Outlet:Clear()
+	Outlet:Get()
 	
 	print('SUCCESSFULLY RESET DELIVER')
 	

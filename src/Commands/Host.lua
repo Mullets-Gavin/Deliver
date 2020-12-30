@@ -1,7 +1,7 @@
 local plugin = script:FindFirstAncestorWhichIsA("Plugin")
 local require = require(plugin:FindFirstChild('Lighter',true))
 
-local PluginStore = require('PluginStore')
+local Outlet = require('Outlet')
 
 local Players = game:GetService('Players')
 local RunService = game:GetService('RunService')
@@ -15,8 +15,6 @@ Command.Info = {
 }
 
 function Command:Execute(args: table): boolean
-	RunService.Heartbeat:Wait()
-	
 	print('Host:')
 	
 	local user = StudioService:GetUserId() do
@@ -28,7 +26,7 @@ function Command:Execute(args: table): boolean
 		print('- Name:',name)
 	end
 	
-	local git = PluginStore:Get('Register')
+	local git = Outlet:Get('Register')
 	if git then
 		print('- GitHub:',git)
 	end

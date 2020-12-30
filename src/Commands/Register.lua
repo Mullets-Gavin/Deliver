@@ -1,7 +1,7 @@
 local plugin = script:FindFirstAncestorWhichIsA("Plugin")
 local require = require(plugin:FindFirstChild('Lighter',true))
 
-local PluginStore = require('PluginStore')
+local Outlet = require('Outlet')
 
 local Command = {}
 Command.Alias = {'r'}
@@ -18,7 +18,7 @@ function Command:Execute(args: table): boolean
 	print('Registering:')
 	
 	if valid then
-		PluginStore:Set('Register',git)
+		Outlet:Set('Register',git)
 		
 		print('Successfully set GitHub')
 		

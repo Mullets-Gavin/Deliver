@@ -5,7 +5,7 @@ local RenderSettings = settings():GetService('RenderSettings')
 
 local Command = {}
 Command.Alias = {'g'}
-Command.Params = {'min=1 max=21'}
+Command.Params = {'(min=1 max=21)?'}
 Command.Info = {
 	"Set your studio graphics settings",
 }
