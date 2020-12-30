@@ -6,7 +6,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 
 **Maintainer:** Mullets
 <br/>
-**GitHub:** https://github.com/Mullets-Gavin
+**GitHub:** [Mullets-Gavin](https://github.com/Mullets-Gavin/)
 <br/>
 **Libraries:**
 - [Loader](https://github.com/Mullets-Gavin/Loader/tree/master/src)
@@ -19,7 +19,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 
 **Maintainer:** eryn L. K.
 <br/>
-**GitHub:** https://github.com/evaera
+**GitHub:** [evaera](https://github.com/evaera)
 <br/>
 **Libraries:**
 - [Cmdr](https://github.com/evaera/Cmdr/tree/master/Cmdr)
@@ -32,7 +32,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 
 **Maintainer:** James Onnen
 <br/>
-**GitHub:** https://github.com/Quenty
+**GitHub:** [Quenty](https://github.com/Quenty)
 <br/>
 **Libraries:**
 - [Nevermore](https://github.com/Quenty/NevermoreEngine)
@@ -43,7 +43,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 
 **Maintainer:** Micah
 <br/>
-**GitHub:** https://github.com/Dekkonot
+**GitHub:** [Dekkonot](https://github.com/Dekkonot)
 <br/>
 **Libraries:**
 - [ApiDump](https://github.com/Dekkonot/bitbuffer/tree/main/src/roblox)
@@ -54,7 +54,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 
 **Maintainer:** Parker Stebbins
 <br/>
-**GitHub:** https://github.com/Fraktality
+**GitHub:** [Fraktality](https://github.com/Fraktality)
 <br/>
 **Libraries:**
 - [spr](https://github.com/Fraktality/spr)
@@ -65,7 +65,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 
 **Maintainer:** Max
 <br/>
-**GitHub:** https://github.com/CloneTrooper1019
+**GitHub:** [CloneTrooper1019](https://github.com/CloneTrooper1019)
 <br/>
 **Libraries:**
 - [Realism](https://github.com/CloneTrooper1019/Character-Realism)
@@ -76,7 +76,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 
 **Maintainer:** Stephen Leitnick
 <br/>
-**GitHub:** https://github.com/Sleitnick
+**GitHub:** [Sleitnick](https://github.com/Sleitnick)
 <br/>
 **Libraries:**
 - [AGF](https://github.com/Sleitnick/AeroGameFramework/tree/master/src)
@@ -91,7 +91,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 
 **Maintainer:** EgoMoose
 <br/>
-**GitHub:** https://github.com/EgoMoose
+**GitHub:** [EgoMoose](https://github.com/EgoMoose)
 <br/>
 **Libraries:**
 - [Wallstick](https://github.com/EgoMoose/Rbx-Wallstick/tree/main/src)
@@ -102,7 +102,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 
 **Maintainer:** buildthomas
 <br/>
-**GitHub:** https://github.com/buildthomas
+**GitHub:** [buildthomas](https://github.com/buildthomas)
 <br/>
 **Libraries:**
 - [MockDataStore](https://github.com/buildthomas/MockDataStoreService/tree/master/lib)
