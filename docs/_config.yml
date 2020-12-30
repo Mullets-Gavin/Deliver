@@ -1,0 +1,10 @@
+title: Deliver
+show_downloads: false
+theme: jekyll-theme-minimal
+description: >
+  A Roblox command line interface plugin to deliver content, commands, and simplicity within Roblox studio.
+  <hr/>
+  <a href="start.html">Getting Started</a><br/>
+  <a href="packages.html">Packages</a><br/>
+  <a href="commands.html">Commands</a><br/>
+  <br/><hr/>
