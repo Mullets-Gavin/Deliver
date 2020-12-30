@@ -1,37 +1,13 @@
 --[=[
+	@Author: Gavin "Mullets" Rosenthal
+	@Desc: Deliver, a Roblox command line interface plugin to deliver content, commands, and simplicity within Roblox studio.
+]=]
 
-Deliver, a Roblox command line interface plugin to deliver content,
-commands, and simplicity within Roblox studio.
-
-path = path or ServerScriptService
-github = https://github.com/
-repo = https://github.com/{profile}/{repo}/{tree}/{branch}/{folder} or https://github.com/{profile}/{repo}[/tree/master/src or name]
-name = repository name
-
-example = https://github.com/Mullets-Gavin/Loader/tree/master/src
-
-Commands:
-
-deliver/help -- the deliver/help command provides a list of all available commands
-install [github repo url] [path] -- install a github repo by url to a path
-install [built-in repo by name] [path] -- install registered repos by name to a path
-license [mit, etc] [path] -- install a standard software license to a path
-host -- outputs the host of the cli, you
-register [github profile] -- register your github profile to you (can change)
-path [path] -- set a default path when installing packages
-
-deliver module:
-
-return {
-	[repo] = {
-		['Author'] = [repo-author];
-		['Register] = {
-			['Host'] = [your rbx name];
-			['GitHub] = [your github (or nil)];
-		};
-	};
-}
-
+--[=[
+[DOCUMENTATION]:
+	https://mullets-gavin.github.io/Deliver/
+	Visit the documentation site for commands & help.
+	
 [LICENSE]:
 	MIT License
 	
@@ -54,48 +30,26 @@ return {
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
-
-
-print([[
-
-Commands:
-[1] Install <repo> <path?>
-[2] Path <path?>
-[3] Register <github>
-[4] Reset
-[5] Help
-[6] Logs
-[7] Host
-[8] Graphics <(1 <-> 21)?>
-[9] About
-[10] Deliver <(enable/disable)?>
-
-You can learn more about Deliver @ the docs
-https://github.mullets-gavin.io/deliver
-]])
-
-
 ]=]
 
 local plugin = script:FindFirstAncestorWhichIsA('Plugin')
 local require = require(plugin:FindFirstChild('Lighter',true))
 
 local Settings = require('Settings')
-local PluginGui = require('PluginGui')
-local PluginStore = require('PluginStore')
+local Outlet = require('Outlet')
 local Factory = require('Factory')
 local GitHub = require('GitHub')
 
 local LogService = game:GetService("LogService")
+local RunService = game:GetService('RunService')
 
-local Toggle = PluginGui.CreateToolbar()
+local Toggle = Outlet.CreateToolbar()
 Toggle.ClickableWhenViewportHidden = true
-
-PluginStore:Template('Deliver',{
-	['Enabled'] = true;
+Outlet.Template('Deliver',{
 	['Path'] = false;
+	['Source'] = false;
+	['Enabled'] = true;
 	['Register'] = false;
-	
 	['Logs'] = {};
 })
 
@@ -105,11 +59,17 @@ local Event = LogService.MessageOut:Connect(function(str, enum)
 	end
 	
 	if Factory.Running then
+		if string.lower(str) == "> ='fix'" or string.lower(str) == '> --fix' then
+			Factory.Running = false
+			GitHub.CURRENT = nil
+		end
+		
 		return
 	end
 	
 	if string.sub(str,1,3) == '> =' then
 		str = string.sub(str,4)
+		RunService.Heartbeat:Wait()
 	elseif string.sub(str,1,4) == '> --' then
 		str = string.sub(str,5)
 	else
@@ -132,8 +92,8 @@ end)
 Toggle.Click:Connect(function()
 	print('> --about')
 	
-	if not PluginStore:Get('Enabled') then
-		PluginStore:Set('Enabled',true)
+	if not Outlet:Get('Enabled') then
+		Outlet:Set('Enabled',true)
 	end
 	
 	Toggle:SetActive(false)
