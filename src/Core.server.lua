@@ -35,7 +35,6 @@
 local plugin = script:FindFirstAncestorWhichIsA('Plugin')
 local require = require(plugin:FindFirstChild('Lighter',true))
 
-local Settings = require('Settings')
 local Outlet = require('Outlet')
 local Factory = require('Factory')
 local GitHub = require('GitHub')
