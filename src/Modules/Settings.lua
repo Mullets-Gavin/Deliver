@@ -4,7 +4,7 @@ return {
 	['Toolbar'] = {
 		['Name'] = "Deliver Launcher";
 		['Tip'] = "Studios finest CLI, launch Deliver";
-		['Icon'] = 'http://www.roblox.com/asset/?id=3143448237';
+		['Icon'] = 'http://www.roblox.com/asset/?id=6147679687';
 	};
 	['Widget'] = {
 		['Info'] = DockWidgetPluginGuiInfo.new(

@@ -24,6 +24,9 @@ return {
 	['Loader'] = {
 		'https://github.com/Mullets-Gavin/Loader/tree/master/src',
 	},
+	['Lighter'] = {
+		'https://github.com/Mullets-Gavin/Loader/tree/master/lite/init',
+	},
 	
 	--[=[
 		@author eryn L. K.

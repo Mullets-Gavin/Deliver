@@ -1,7 +1,7 @@
 local plugin = script:FindFirstAncestorWhichIsA("Plugin")
 local require = require(plugin:FindFirstChild('Lighter',true))
 
-local PluginStore = require('PluginStore')
+local Outlet = require('Outlet')
 local Commands = plugin:FindFirstChild('Commands',true)
 
 local RunService = game:GetService('RunService')
@@ -44,7 +44,7 @@ function Factory.Parse(str: string): table
 end
 
 function Factory.Possible(cmd: string): boolean
-	local enabled = PluginStore:Get('Enabled')
+	local enabled = Outlet:Get('Enabled')
 	
 	if not enabled then
 		local parse = Factory.Parse(cmd)
@@ -72,12 +72,12 @@ function Factory.Execute(cmd: string): boolean
 	local hash = string.lower(parse[1] or '')
 	local run = Factory.Cmds[hash]
 	
-	RunService.Heartbeat:Wait()
-	
 	if not run then
 		for key,data in pairs(Factory.Alias) do
 			for index,alias in pairs(data) do
-				if hash ~= alias then continue end
+				if hash ~= alias then
+					continue
+				end
 				
 				hash = key
 				run = Factory.Cmds[hash]
@@ -101,15 +101,15 @@ function Factory.Execute(cmd: string): boolean
 		end)
 		
 		local log = 'Command: '..hash..' | Date: '..os.date('%x',os.time())..' | Full: --'..cmd..' | '..(success and 'Successful' or 'Failed')
-		local logs = PluginStore:Get('Logs')
+		local logs = Outlet:Get('Logs')
 		
-		if #logs >= 15 then
+		if #logs >= 100 then
 			table.remove(logs,1)
 		end
 		
 		if hash ~= 'logs' then
 			table.insert(logs,log)
-			PluginStore:Set('Logs',logs)
+			Outlet:Set('Logs',logs)
 		end
 		
 		if not success or reason then
