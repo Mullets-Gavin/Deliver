@@ -48,19 +48,17 @@ You've installed Deliver, and want to know how to use it. Great news, it's extre
 
 This should print the following:
 
-> `> --about`
-> </br>
-> Deliver, a dead simple blazing fast CLI
-> </br>
-> Handle GitHub packages and process studio commands
-> 
-> Check out the documentation for help:
-> </br>
-> https://mullets-gavin.github.io/Deliver/
-> 
-> For information about commands, run:
-> </br>
-> `--help`
+```
+> --about
+Deliver, a dead simple blazing fast CLI
+Handle GitHub packages and process studio commands
+
+Check out the documentation for help:
+https://mullets-gavin.github.io/Deliver/
+
+For information about commands, run:
+--help
+```
 
 3. Try out the help command with the quote prefix:
 
