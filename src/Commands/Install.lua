@@ -38,7 +38,6 @@ end
 function Command:Execute(args: table): boolean
 	local link = args[1]
 	local path = args[2] or Outlet:Get('Path')
-	local max = 0
 	
 	print('Installing...')
 	
@@ -69,6 +68,11 @@ function Command:Execute(args: table): boolean
 				software = GitHub:Install(url,path)
 				if not software then
 					return false,"Failed to install package '"..link.."'"
+				else
+					print('Installed',lib..':','game.'..software:GetFullName())
+					Selection:Set({software})
+					
+					return true
 				end
 			end
 		end
