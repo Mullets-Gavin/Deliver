@@ -32,44 +32,46 @@
 	SOFTWARE.
 ]=]
 
-local plugin = script:FindFirstAncestorWhichIsA('Plugin')
-local require = require(plugin:FindFirstChild('Lighter',true))
+local plugin = script:FindFirstAncestorWhichIsA("Plugin")
+local require = require(plugin:FindFirstChild("Lighter", true))
 
-local Outlet = require('Outlet')
-local Factory = require('Factory')
-local GitHub = require('GitHub')
+local Outlet = require("Outlet")
+local Factory = require("Factory")
+local GitHub = require("GitHub")
 
-local Geometry = game:GetService('Geometry')
+local Geometry = game:GetService("Geometry")
 local LogService = game:GetService("LogService")
-local RunService = game:GetService('RunService')
-local HttpService = game:GetService('HttpService')
+local RunService = game:GetService("RunService")
+local HttpService = game:GetService("HttpService")
 
 local Toggle = Outlet.CreateToolbar()
 Toggle.ClickableWhenViewportHidden = true
 
-Outlet.Template('Deliver',{
-	['Path'] = false;
-	['Source'] = false;
-	['Enabled'] = true;
-	['Register'] = false;
-	['Logs'] = {};
+Outlet.Template("Deliver", {
+	["Path"] = false,
+	["Source"] = false,
+	["Enabled"] = true,
+	["Register"] = false,
+	["Logs"] = {},
 })
 
 do
-	local success,response = pcall(function()
-		return Instance.new('Script',Geometry)
+	local success, response = pcall(function()
+		return Instance.new("Script", Geometry)
 	end)
-	
+
 	if not success then
-		warn('Please enable Script & HttpService Permissions to further use Deliver')
-		
+		warn("Please enable Script & HttpService Permissions to further use Deliver")
+
 		pcall(function()
 			return {
 				GitHub = HttpService:GetAsync("https://github.com/Mullets-Gavin/Deliver/blob/master/src/Core.server.lua"),
-				RawGitHub = HttpService:GetAsync("https://raw.githubusercontent.com/Mullets-Gavin/Deliver/master/src/Core.server.lua")
+				RawGitHub = HttpService:GetAsync("https://raw.githubusercontent.com/Mullets-Gavin/Deliver/master/src/Core.server.lua"),
 			}
 		end)
-	elseif typeof(response) == 'Instance' and response:IsA('Script') then
+	end
+
+	if typeof(response) == "Instance" and response:IsA("Script") then
 		response:Destroy()
 	end
 end
@@ -78,29 +80,29 @@ local Event = LogService.MessageOut:Connect(function(str, enum)
 	if enum ~= Enum.MessageType.MessageOutput then
 		return
 	end
-	
+
 	if Factory.Running then
-		if string.lower(str) == "> ='fix'" or string.lower(str) == '> --fix' then
+		if string.lower(str) == "> ='fix'" or string.lower(str) == "> --fix" then
 			Factory.Running = false
 			GitHub.CURRENT = nil
 		end
-		
+
 		return
 	end
-	
-	if string.sub(str,1,3) == '> =' then
-		str = string.sub(str,4)
+
+	if string.sub(str, 1, 3) == "> =" then
+		str = string.sub(str, 4)
 		RunService.Heartbeat:Wait()
-	elseif string.sub(str,1,4) == '> --' then
-		str = string.sub(str,5)
+	elseif string.sub(str, 1, 4) == "> --" then
+		str = string.sub(str, 5)
 	else
 		return
 	end
-	
+
 	if not Factory.Possible(str) then
 		return
 	end
-	
+
 	Factory.Running = true
 	Factory.Execute(str)
 	Factory.Running = false
@@ -111,11 +113,11 @@ plugin.Unloading:Connect(function()
 end)
 
 Toggle.Click:Connect(function()
-	print('> --about')
-	
-	if not Outlet:Get('Enabled') then
-		Outlet:Set('Enabled',true)
+	print("> --about")
+
+	if not Outlet:Get("Enabled") then
+		Outlet:Set("Enabled", true)
 	end
-	
+
 	Toggle:SetActive(false)
 end)

@@ -1,5 +1,5 @@
 local plugin = script:FindFirstAncestorWhichIsA("Plugin")
-local require = require(plugin:FindFirstChild('Lighter',true))
+local require = require(plugin:FindFirstChild("Lighter", true))
 
 local Command = {}
 Command.Alias = {}
@@ -9,21 +9,21 @@ Command.Info = {
 }
 
 local About = {
-	'Deliver, a dead simple blazing fast CLI',
-	'Handle GitHub packages and process studio commands',
-	'',
-	'Check out the documentation for help:',
-	'https://mullets-gavin.github.io/Deliver/',
-	'',
-	'For information about commands, run:',
-	'--help',
+	"Deliver, a dead simple blazing fast CLI",
+	"Handle GitHub packages and process studio commands",
+	"",
+	"Check out the documentation for help:",
+	"https://mullets-gavin.github.io/Deliver/",
+	"",
+	"For information about commands, run:",
+	"--help",
 }
 
 function Command:Execute(args: table): boolean
-	for index,cmd in pairs(About) do
+	for index, cmd in pairs(About) do
 		print(cmd)
 	end
-	
+
 	return true
 end
 
