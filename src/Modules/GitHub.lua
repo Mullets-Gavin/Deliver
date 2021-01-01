@@ -346,7 +346,7 @@ function GitHub:Download(url, parent, list)
 					done = done + 1
 				end
 			end
-until done == count or not RunService.Heartbeat:Wait()
+		until done == count or not RunService.Heartbeat:Wait()
 
 		local object = routines[1]
 		if garbage then
