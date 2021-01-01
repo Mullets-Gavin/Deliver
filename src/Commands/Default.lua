@@ -37,7 +37,9 @@ local function Unhook()
 end
 
 local function Hook()
-	if Command.Event then return end
+	if Command.Event then
+		return
+	end
 	
 	Command.Event = game.DescendantAdded:Connect(function(obj)
 		pcall(Apply, obj)
