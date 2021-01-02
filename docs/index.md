@@ -6,6 +6,10 @@ Deliver has a wide range of uses, and it continues to grow with every update. De
 
 [Get Started Using Deliver.](start.md)
 
+## Contributing
+
+Contributions are extremely welcome. Deliver is always looking to expand upon commands. If you have an idea for a command, or you want to program one, you can [open an issue](https://github.com/Mullets-Gavin/Deliver/issues) or use the [command template](https://github.com/Mullets-Gavin/Deliver/blob/master/src/Modules/_template.lua) to create your own command.
+
 ## Quick Start
 
 * You can download the Deliver plugin on Roblox [here](https://www.roblox.com/library/6127040793/Deliver).
