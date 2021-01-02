@@ -10,7 +10,6 @@ local require = require(plugin:FindFirstChild("Lighter", true))
 
 local Settings = require("Settings")
 
-local Geometry = game:GetService("Geometry")
 local HttpService = game:GetService("HttpService")
 
 local Outlet = {}
@@ -57,7 +56,7 @@ function Outlet.Prompt(perm: string): nil
 		end)
 	elseif perm == Outlet.Permissions.Script then
 		local success, response = pcall(function()
-			return Instance.new("Script", Geometry)
+			return Instance.new("Script", plugin)
 		end)
 
 		if success then
