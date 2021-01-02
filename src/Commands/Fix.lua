@@ -3,6 +3,7 @@ local require = require(plugin:FindFirstChild("Lighter", true))
 
 local Command = {}
 Command.Alis = {}
+Command.Params = {}
 Command.Info = {
 	"Fix Deliver with this quick command",
 }

@@ -12,7 +12,7 @@ Command.Info = {
 	"Automatically set a script template for Loader",
 }
 
-Command.Template = "local require = require(game:GetService('ReplicatedStorage'):WaitForChild('Loader'))\n"
+Command.Template = [[local require = require(game:GetService("ReplicatedStorage"):WaitForChild("Loader"))\n]]
 Command.Event = nil
 Command.Classes = { "Script", "ModuleScript", "LocalScript" }
 
@@ -40,7 +40,7 @@ local function Hook()
 	if Command.Event then
 		return
 	end
-	
+
 	Command.Event = game.DescendantAdded:Connect(function(obj)
 		pcall(Apply, obj)
 	end)
