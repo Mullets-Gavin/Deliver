@@ -33,9 +33,14 @@ local function Unhook()
 	end
 
 	Command.Event:Disconnect()
+	Command.Event = nil
 end
 
 local function Hook()
+	if Command.Event then
+		return
+	end
+	
 	Command.Event = game.DescendantAdded:Connect(function(obj)
 		pcall(Apply, obj)
 	end)
