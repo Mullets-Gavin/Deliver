@@ -12,7 +12,7 @@ Command.Info = {
 	"Automatically set a script template for Loader",
 }
 
-Command.Template = [[local require = require(game:GetService("ReplicatedStorage"):WaitForChild("Loader"))]]
+Command.Template = 'local require = require(game:GetService("ReplicatedStorage"):WaitForChild("Loader"))\n'
 Command.Event = nil
 Command.Classes = { "Script", "ModuleScript", "LocalScript" }
 

@@ -41,7 +41,6 @@ local GitHub = require("GitHub")
 
 local LogService = game:GetService("LogService")
 local RunService = game:GetService("RunService")
-local HttpService = game:GetService("HttpService")
 
 local Toggle = Outlet.CreateToolbar()
 Toggle.ClickableWhenViewportHidden = true
