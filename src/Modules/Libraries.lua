@@ -122,6 +122,6 @@ return {
 		"https://github.com/Roblox/rodux/tree/master/src",
 	},
 	["roact-rodux"] = {
-		"https://github.com/Roblox/rodux/tree/master/src",
+		"https://github.com/Roblox/roact-rodux/tree/master/src",
 	},
 }
