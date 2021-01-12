@@ -62,6 +62,12 @@ Quick-learn about Deliver and what it provides.
 ```
 Enable or disable the Deliver CLI.
 
+## Fix
+```
+--fix
+```
+Resolve issues with the Deliver CLI & force it to restart. This is exceptionally useful when you accidentally come across a bug that disables Deliver from working. This will *not* reset anything.
+
 ## Default
 ```
 --default <enable/disable?>

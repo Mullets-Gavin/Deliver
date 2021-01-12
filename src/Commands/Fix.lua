@@ -5,11 +5,13 @@ local Command = {}
 Command.Alis = {}
 Command.Params = {}
 Command.Info = {
-	"This is helpful",
+	"Fix Deliver with this quick command",
 }
 
 function Command:Execute(args: table): boolean
+	print("FIXED DELIVER")
 
+	return true
 end
 
 return Command

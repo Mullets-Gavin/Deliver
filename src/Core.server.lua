@@ -39,14 +39,14 @@ local Outlet = require("Outlet")
 local Factory = require("Factory")
 local GitHub = require("GitHub")
 
-local Geometry = game:GetService("Geometry")
 local LogService = game:GetService("LogService")
 local RunService = game:GetService("RunService")
-local HttpService = game:GetService("HttpService")
 
 local Toggle = Outlet.CreateToolbar()
 Toggle.ClickableWhenViewportHidden = true
 
+Outlet.Prompt(Outlet.Permissions.Http)
+Outlet.Prompt(Outlet.Permissions.Script)
 Outlet.Template("Deliver", {
 	["Path"] = false,
 	["Source"] = false,
@@ -54,27 +54,6 @@ Outlet.Template("Deliver", {
 	["Register"] = false,
 	["Logs"] = {},
 })
-
-do
-	local success, response = pcall(function()
-		return Instance.new("Script", Geometry)
-	end)
-
-	if not success then
-		warn("Please enable Script & HttpService Permissions to further use Deliver")
-
-		pcall(function()
-			return {
-				GitHub = HttpService:GetAsync("https://github.com/Mullets-Gavin/Deliver/blob/master/src/Core.server.lua"),
-				RawGitHub = HttpService:GetAsync("https://raw.githubusercontent.com/Mullets-Gavin/Deliver/master/src/Core.server.lua"),
-			}
-		end)
-	end
-
-	if typeof(response) == "Instance" and response:IsA("Script") then
-		response:Destroy()
-	end
-end
 
 local Event = LogService.MessageOut:Connect(function(str, enum)
 	if enum ~= Enum.MessageType.MessageOutput then
@@ -85,9 +64,9 @@ local Event = LogService.MessageOut:Connect(function(str, enum)
 		if string.lower(str) == "> ='fix'" or string.lower(str) == "> --fix" then
 			Factory.Running = false
 			GitHub.CURRENT = nil
+		else
+			return
 		end
-
-		return
 	end
 
 	if string.sub(str, 1, 3) == "> =" then

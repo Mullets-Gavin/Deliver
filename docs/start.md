@@ -36,11 +36,11 @@ By default, Deliver has two prefixes to run commands with.
 
 You've installed Deliver, and want to know how to use it. Great news, it's extremely simple!
 
-1. Open the Command Bar & Output widgets in Roblox studio
+* Open the Command Bar & Output widgets in Roblox studio
 
 ![img](https://raw.githubusercontent.com/Mullets-Gavin/Deliver/master/docs/assets/images/Toolbar.png)
 
-2. Use the command bar to try out a simple command. Run the following in your command bar:
+* Use the command bar to try out a simple command. Run the following in your command bar:
 
 ```
 --about
@@ -60,7 +60,7 @@ For information about commands, run:
 --help
 ```
 
-3. Try out the help command with the quote prefix:
+* Try out the help command with the quote prefix:
 
 ```
 ='help'
@@ -68,7 +68,7 @@ For information about commands, run:
 
 The output should provide a list of all the commands. You can also learn about individual commands by adding the command name after the help. This is great when you want to learn about the alias options to commands. They aren't listed on the docs because they may change in the future, and it helps to ask your version what aliases are provided.
 
-4. You now know how to use Deliver! To try something more advanced, run an installation command:
+* You now know how to use Deliver! To try something more advanced, run an installation command:
 
 ```
 --install https://github.com/Mullets-Gavin/Loader/tree/master/src game/ServerScriptService
@@ -82,4 +82,4 @@ Paths can be provided as an optional parameter to `install`. To set a default pa
 
 Now your path is set! You may have also noticed that I swapped between a slash `/` and a period `.`, this is because Deliver works for both filesystem designs and Roblox paths. It should help users transitioning into Roblox.
 
-5. Report any bugs by [opening an issue on the GitHub repository for Deliver here](https://github.com/Mullets-Gavin/Deliver/issues). Thanks for using Deliver!
+* Report any bugs by [opening an issue on the GitHub repository for Deliver here](https://github.com/Mullets-Gavin/Deliver/issues). Thanks for using Deliver!

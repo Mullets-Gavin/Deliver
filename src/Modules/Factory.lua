@@ -9,7 +9,7 @@ local ChangeHistoryService = game:GetService("ChangeHistoryService")
 
 local Factory = {}
 Factory.Running = false
-Factory.Debug = StudioService:GetUserId() == 46522586
+Factory.Debug = (StudioService:GetUserId() == 46522586) or (StudioService:GetUserId() == 98916707)
 Factory.Cmds, Factory.Alias = {}, {}
 do
 	for index, cmd in ipairs(Commands:GetChildren()) do

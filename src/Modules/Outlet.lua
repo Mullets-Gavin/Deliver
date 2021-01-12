@@ -10,9 +10,15 @@ local require = require(plugin:FindFirstChild("Lighter", true))
 
 local Settings = require("Settings")
 
+local HttpService = game:GetService("HttpService")
+
 local Outlet = {}
 Outlet.Default = {}
 Outlet.Key = "Outlet"
+Outlet.Permissions = {
+	["Http"] = "HttpService",
+	["Script"] = "ScriptSource",
+}
 
 local function Copy(master: table): table
 	local clone = {}
@@ -28,7 +34,7 @@ local function Copy(master: table): table
 	return clone
 end
 
-function Outlet.CreateToolbar()
+function Outlet.CreateToolbar(): nil
 	return plugin:CreateToolbar(Settings["Name"]):CreateButton(
 		Settings["Toolbar"]["Name"],
 		Settings["Toolbar"]["Tip"],
@@ -38,6 +44,25 @@ end
 
 function Outlet.CreateWidget()
 	-- TODO: write the widget code
+end
+
+function Outlet.Prompt(perm: string): nil
+	if perm == Outlet.Permissions.Http then
+		return pcall(function()
+			return {
+				GitHub = HttpService:GetAsync("https://github.com/Mullets-Gavin/Deliver/blob/master/src/Core.server.lua"),
+				RawGitHub = HttpService:GetAsync("https://raw.githubusercontent.com/Mullets-Gavin/Deliver/master/src/Core.server.lua"),
+			}
+		end)
+	elseif perm == Outlet.Permissions.Script then
+		local success, response = pcall(function()
+			return Instance.new("Script", plugin)
+		end)
+
+		if success then
+			response:Destroy()
+		end
+	end
 end
 
 function Outlet.Template(key: string, file: table): nil
