@@ -17,6 +17,21 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 --install lighter
 ```
 
+**Maintainer:** Roblox
+<br/>
+**GitHub:** [Roblox](https://github.com/Roblox)
+<br/>
+**Libraries:**
+- [roact](https://github.com/Roblox/roact)
+- [rodux](https://github.com/Roblox/rodux)
+- [roact-rodux](https://github.com/Roblox/roact-rodux)
+
+```
+--install roact
+--install rodux
+--install roact-rodux
+```
+
 **Maintainer:** eryn L. K.
 <br/>
 **GitHub:** [evaera](https://github.com/evaera)
@@ -113,19 +128,4 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 --install mockdatastore
 --install enumextender
 --install rain
-```
-
-**Maintainer:** Roblox
-<br/>
-**GitHub:** [Roblox](https://github.com/Roblox)
-<br/>
-**Libraries:**
-- [roact](https://github.com/Roblox/roact)
-- [rodux](https://github.com/Roblox/rodux)
-- [roact-rodux](https://github.com/Roblox/roact-rodux)
-
-```
---install roact
---install rodux
---install roact-rodux
 ```
