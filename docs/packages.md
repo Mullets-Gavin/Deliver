@@ -17,7 +17,7 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 --install lighter
 ```
 
-**Maintainer:** Roblox
+**Maintainer:** Roblox Corp
 <br/>
 **GitHub:** [Roblox](https://github.com/Roblox)
 <br/>
