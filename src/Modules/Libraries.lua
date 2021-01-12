@@ -14,6 +14,9 @@ Current library keycodes:
 	MockDataStore
 	EnumExtender
 	Rain
+	roact
+	rodux
+	roact-rodux
 ]=]
 
 return {
@@ -106,5 +109,19 @@ return {
 	},
 	["Rain"] = {
 		"https://github.com/buildthomas/Rain/tree/master/src",
+	},
+	
+	--[=[
+		@author Roblox
+		@github https://github.com/Roblox
+	]=]
+	["roact"] = {
+		"https://github.com/Roblox/roact/tree/master/src",
+	},
+	["rodux"] = {
+		"https://github.com/Roblox/rodux/tree/master/src",
+	},
+	["roact-rodux"] = {
+		"https://github.com/Roblox/roact-rodux/tree/master/src",
 	},
 }
