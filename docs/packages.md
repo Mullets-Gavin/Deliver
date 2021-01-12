@@ -114,3 +114,18 @@ Included with Deliver is a shorthand for numerous packages, making it super dupe
 --install enumextender
 --install rain
 ```
+
+**Maintainer:** Roblox
+<br/>
+**GitHub:** [Roblox](https://github.com/Roblox)
+<br/>
+**Libraries:**
+- [roact](https://github.com/Roblox/roact)
+- [rodux](https://github.com/Roblox/rodux)
+- [roact-rodux](https://github.com/Roblox/roact-rodux)
+
+```
+--install roact
+--install rodux
+--install roact-rodux
+```
