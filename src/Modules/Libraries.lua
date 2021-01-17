@@ -28,7 +28,7 @@ return {
 		"https://github.com/Mullets-Gavin/Loader/tree/master/src",
 	},
 	["Lighter"] = {
-		"https://github.com/Mullets-Gavin/Loader/tree/master/lite/init",
+		"https://github.com/Mullets-Gavin/Loader/tree/master/lite",
 	},
 
 	--[=[
